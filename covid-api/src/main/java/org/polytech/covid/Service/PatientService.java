@@ -1,4 +1,4 @@
-package Service;
+package org.polytech.covid.Service;
 
 import org.polytech.covid.Model.Patient;
 import org.polytech.covid.Repository.PatientRepository;

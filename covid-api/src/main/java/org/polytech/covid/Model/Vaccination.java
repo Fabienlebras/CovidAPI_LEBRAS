@@ -19,6 +19,7 @@ public class Vaccination {
     @ManyToOne
     private Patient patient;
     private Date vaccinationDate;
+    private boolean validate;
     @ManyToOne
     private Doctor doctor;
 
@@ -27,11 +28,13 @@ public class Vaccination {
         this.patient = patient;
         this.vaccinationDate = vaccinationDate;
         this.doctor = doctor;
+        this.validate = false;
     }
 
     public Vaccination() {
-        
+
     }
+
     public Long getId() {
         return id;
     }
@@ -58,6 +61,14 @@ public class Vaccination {
 
     public void setDoctor(Doctor doctor) {
         this.doctor = doctor;
+    }
+
+    public boolean isValidate() {
+        return validate;
+    }
+
+    public void setValidate(boolean validate) {
+        this.validate = validate;
     }
 
 }

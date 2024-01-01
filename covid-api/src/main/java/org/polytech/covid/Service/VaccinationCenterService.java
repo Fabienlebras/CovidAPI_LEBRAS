@@ -1,4 +1,4 @@
-package Service;
+package org.polytech.covid.Service;
 
 import org.polytech.covid.Model.VaccinationCenter;
 import org.polytech.covid.Repository.VaccinationCenterRepository;
@@ -24,16 +24,23 @@ public class VaccinationCenterService {
         vaccinationCenterRepository.deleteById(id);
     }
 
-    public void update(VaccinationCenter vaccinationCenter) {
-
-        if (vaccinationCenterRepository.existsById(vaccinationCenter.getId())) {
-            vaccinationCenterRepository.save(vaccinationCenter);
-        }
-
-    }
+    
+      public void update(VaccinationCenter vaccinationCenter) {
+      
+      if (vaccinationCenterRepository.existsById(vaccinationCenter.getId())) {
+      vaccinationCenterRepository.save(vaccinationCenter);
+      }
+      
+      }
+     
 
     public Iterable<VaccinationCenter> findVaccinationCentersByCityLike() {
         return vaccinationCenterRepository.findAll();
+    }
+
+    public Iterable<VaccinationCenter> getVaccinationCentersByCity(String city) {
+        Iterable<VaccinationCenter> centers = vaccinationCenterRepository.findByCity(city);
+        return centers;
     }
 
 }

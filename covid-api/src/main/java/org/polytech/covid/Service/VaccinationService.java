@@ -1,4 +1,4 @@
-package Service;
+package org.polytech.covid.Service;
 
 import org.polytech.covid.Model.Vaccination;
 import org.polytech.covid.Repository.VaccinationRepository;
@@ -30,6 +30,18 @@ public class VaccinationService {
             vaccinationRepository.save(vaccination);
         }
 
+    }
+
+    public boolean validate(long id) {
+        Vaccination vaccination = vaccinationRepository.getById(id);
+
+        if (vaccination != null) {
+            vaccination.setValidate(true);
+            vaccinationRepository.save(vaccination);
+            return true;
+        } else {
+            return false;
+        }
     }
 
 }

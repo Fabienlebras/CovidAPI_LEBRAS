@@ -18,7 +18,8 @@ public class Administrator {
     private String mail;
     private String phone;
 
-    public Administrator(String firstName, String lastName, String mail, String phone) {
+    public Administrator(String firstName, String lastName, String mail, String phone,
+            VaccinationCenter vaccinationCenter) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.mail = mail;

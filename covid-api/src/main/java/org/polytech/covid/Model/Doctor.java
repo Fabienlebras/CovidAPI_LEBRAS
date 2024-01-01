@@ -16,13 +16,18 @@ public class Doctor {
     private Long id;
     private String firstName;
     private String lastName;
+    private String mail;
+    private String phone;
+
     @ManyToOne
     private VaccinationCenter vaccinationCenter;
 
-    public Doctor(String firstName, String lastName, VaccinationCenter vaccinationCenter) {
+    public Doctor(String firstName, String lastName, VaccinationCenter vaccinationCenter, String mail, String phone) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.vaccinationCenter = vaccinationCenter;
+        this.mail = mail;
+        this.phone = phone;
     }
 
     public Doctor() {
@@ -55,6 +60,22 @@ public class Doctor {
 
     public void setVaccinationCenter(VaccinationCenter vaccinationCenter) {
         this.vaccinationCenter = vaccinationCenter;
+    }
+
+    public String getMail() {
+        return mail;
+    }
+
+    public void setMail(String mail) {
+        this.mail = mail;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
 }

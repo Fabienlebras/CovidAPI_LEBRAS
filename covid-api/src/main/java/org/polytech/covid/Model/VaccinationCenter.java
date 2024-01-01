@@ -23,6 +23,13 @@ public class VaccinationCenter {
         this.city = city;
     }
 
+    public VaccinationCenter(String name, String address, String city, long id) {
+        this.name = name;
+        this.address = address;
+        this.city = city;
+        this.id = id;
+    }
+
     public VaccinationCenter() {
 
     }
