@@ -1,6 +1,5 @@
 package org.polytech.covid.Model;
 
-import java.sql.Date;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -18,17 +17,25 @@ public class Vaccination {
     private Long id;
     @ManyToOne
     private Patient patient;
-    private Date vaccinationDate;
+    private String vaccinationDate;
     private boolean validate;
     @ManyToOne
     private Doctor doctor;
 
-    public Vaccination(Patient patient, Date vaccinationDate, Doctor doctor) {
+    public Vaccination(Patient patient, String vaccinationDate, Doctor doctor) {
 
         this.patient = patient;
         this.vaccinationDate = vaccinationDate;
         this.doctor = doctor;
         this.validate = false;
+    }
+
+    public Vaccination(Patient patient, String vaccinationDate, Doctor doctor, Boolean validate) {
+
+        this.patient = patient;
+        this.vaccinationDate = vaccinationDate;
+        this.doctor = doctor;
+        this.validate = validate;
     }
 
     public Vaccination() {
@@ -47,11 +54,11 @@ public class Vaccination {
         this.patient = patient;
     }
 
-    public Date getVaccinationDate() {
+    public String getVaccinationDate() {
         return vaccinationDate;
     }
 
-    public void setVaccinationDate(Date vaccinationDate) {
+    public void setVaccinationDate(String vaccinationDate) {
         this.vaccinationDate = vaccinationDate;
     }
 

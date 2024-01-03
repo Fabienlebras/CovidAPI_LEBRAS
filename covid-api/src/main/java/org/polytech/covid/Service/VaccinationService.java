@@ -1,5 +1,7 @@
 package org.polytech.covid.Service;
 
+import java.util.Optional;
+
 import org.polytech.covid.Model.Vaccination;
 import org.polytech.covid.Repository.VaccinationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,4 +46,7 @@ public class VaccinationService {
         }
     }
 
+    public Optional<Vaccination> getPatientById(long id) {
+        return vaccinationRepository.findById(id);
+    }
 }

@@ -3,16 +3,13 @@ package org.polytech.covid.Controller;
 import org.polytech.covid.Model.VaccinationCenter;
 import org.polytech.covid.Service.VaccinationCenterService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
@@ -67,11 +64,6 @@ public class VaccinationCenterController {
         String id = parts[3].trim();
         Long new_Id = Long.parseLong(id);
         VaccinationCenter vaccinationCenter = new VaccinationCenter(name, address, city, new_Id);
-
-        System.out.print(vaccinationCenter.getAddress());
-        System.out.print(vaccinationCenter.getCity());
-        System.out.print(vaccinationCenter.getName());
-        System.out.print(vaccinationCenter.getId());
 
         vaccinationCenterService.update(vaccinationCenter);
     }

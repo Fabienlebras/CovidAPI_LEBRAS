@@ -11,7 +11,7 @@ public class AdministratorService {
     @Autowired
     private AdministratorRepository administratorRepository;
 
-    public Iterable<Administrator> getVaccination() {
+    public Iterable<Administrator> getAllAdministrator() {
         return administratorRepository.findAll();
     }
 

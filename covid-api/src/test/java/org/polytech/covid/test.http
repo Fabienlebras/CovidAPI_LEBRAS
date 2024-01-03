@@ -1,1 +1,1 @@
-POST http://localhost:8080/vaccination-center/updatecenter/tes&&fff&&tes&&5
+GET   http://localhost:8080/doctor/All-doctor

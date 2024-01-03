@@ -1,7 +1,9 @@
 package org.polytech.covid.Service;
 
+import java.util.Optional;
+
 import org.polytech.covid.Model.Doctor;
-import org.polytech.covid.Model.Vaccination;
+
 import org.polytech.covid.Repository.DoctorRepository;
 import org.polytech.covid.Repository.VaccinationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,10 +14,8 @@ public class DoctorService {
 
     @Autowired
     private DoctorRepository doctorRepository;
-    @Autowired
-    private VaccinationRepository vaccinationRepository;
 
-    public Iterable<Doctor> getVaccination() {
+    public Iterable<Doctor> getDoctor() {
         return doctorRepository.findAll();
     }
 
@@ -26,6 +26,7 @@ public class DoctorService {
 
     public void delete(long id) {
         doctorRepository.deleteById(id);
+
     }
 
     public void update(Doctor doctor) {
@@ -36,6 +37,8 @@ public class DoctorService {
 
     }
 
-   
+    public Optional<Doctor> getDoctorById(long id) {
+        return doctorRepository.findById(id);
+    }
 
 }

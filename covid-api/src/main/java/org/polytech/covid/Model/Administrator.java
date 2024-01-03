@@ -1,9 +1,14 @@
 package org.polytech.covid.Model;
 
+
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -17,6 +22,9 @@ public class Administrator {
     private String lastName;
     private String mail;
     private String phone;
+    @ManyToOne
+    @JoinColumn(name = "vaccination_center_id") 
+    private VaccinationCenter vaccinationCenter;
 
     public Administrator(String firstName, String lastName, String mail, String phone,
             VaccinationCenter vaccinationCenter) {
@@ -24,6 +32,17 @@ public class Administrator {
         this.lastName = lastName;
         this.mail = mail;
         this.phone = phone;
+        this.vaccinationCenter = vaccinationCenter;
+    }
+
+    public Administrator(Long id, String firstName, String lastName, String mail, String phone,
+            VaccinationCenter vaccinationCenter) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.mail = mail;
+        this.phone = phone;
+        this.vaccinationCenter = vaccinationCenter;
     }
 
     public String getFirstName() {

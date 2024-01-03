@@ -30,6 +30,16 @@ public class Doctor {
         this.phone = phone;
     }
 
+    public Doctor(Long id, String firstName, String lastName, VaccinationCenter vaccinationCenter, String mail,
+            String phone) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.vaccinationCenter = vaccinationCenter;
+        this.mail = mail;
+        this.phone = phone;
+        this.id = id;
+    }
+
     public Doctor() {
 
     }

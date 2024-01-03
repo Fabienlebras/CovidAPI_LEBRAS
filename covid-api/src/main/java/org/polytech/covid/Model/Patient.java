@@ -17,18 +17,24 @@ public class Patient {
     private String lastName;
     private String mail;
     private String phone;
-    private String registrationDate;
 
     public Patient() {
 
     }
 
-    public Patient(String firstName, String lastName, String mail, String phone, String registrationDate) {
+    public Patient(String firstName, String lastName, String mail, String phone) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.mail = mail;
         this.phone = phone;
-        this.registrationDate = registrationDate;
+    }
+
+    public Patient(long id, String firstName, String lastName, String mail, String phone) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.mail = mail;
+        this.phone = phone;
+        this.id = id;
     }
 
     public Long getId() {
@@ -67,12 +73,6 @@ public class Patient {
         this.phone = phone;
     }
 
-    public String getRegistrationDate() {
-        return registrationDate;
-    }
 
-    public void setRegistrationDate(String registrationDate) {
-        this.registrationDate = registrationDate;
-    }
 
 }
